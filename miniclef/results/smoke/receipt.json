@@ -1,0 +1,123 @@
+{
+  "backbone": "Qwen/Qwen3-0.6B",
+  "n_train": 12,
+  "n_eval": 8,
+  "epochs": 1,
+  "before": [
+    {
+      "set": "seen",
+      "acc": 0.308,
+      "chance": 0.346,
+      "brier": 0.654,
+      "families": {
+        "outage": {
+          "acc": 0.2,
+          "chance": 0.5,
+          "n": 5
+        },
+        "refund": {
+          "acc": 0.5,
+          "chance": 0.5,
+          "n": 6
+        },
+        "team": {
+          "acc": 0.0,
+          "chance": 0.2,
+          "n": 5
+        },
+        "tier": {
+          "acc": 0.6,
+          "chance": 0.25,
+          "n": 5
+        },
+        "urgency": {
+          "acc": 0.2,
+          "chance": 0.25,
+          "n": 5
+        }
+      }
+    },
+    {
+      "set": "heldout",
+      "acc": 0.357,
+      "chance": 0.452,
+      "brier": 0.552,
+      "families": {
+        "big_amount": {
+          "acc": 0.2,
+          "chance": 0.5,
+          "n": 5
+        },
+        "error_code": {
+          "acc": 0.4,
+          "chance": 0.5,
+          "n": 5
+        },
+        "tone": {
+          "acc": 0.5,
+          "chance": 0.333,
+          "n": 4
+        }
+      }
+    }
+  ],
+  "after": [
+    {
+      "set": "seen",
+      "acc": 0.462,
+      "chance": 0.346,
+      "brier": 0.654,
+      "families": {
+        "outage": {
+          "acc": 0.6,
+          "chance": 0.5,
+          "n": 5
+        },
+        "refund": {
+          "acc": 0.333,
+          "chance": 0.5,
+          "n": 6
+        },
+        "team": {
+          "acc": 0.6,
+          "chance": 0.2,
+          "n": 5
+        },
+        "tier": {
+          "acc": 0.6,
+          "chance": 0.25,
+          "n": 5
+        },
+        "urgency": {
+          "acc": 0.2,
+          "chance": 0.25,
+          "n": 5
+        }
+      }
+    },
+    {
+      "set": "heldout",
+      "acc": 0.643,
+      "chance": 0.452,
+      "brier": 0.539,
+      "families": {
+        "big_amount": {
+          "acc": 1.0,
+          "chance": 0.5,
+          "n": 5
+        },
+        "error_code": {
+          "acc": 0.6,
+          "chance": 0.5,
+          "n": 5
+        },
+        "tone": {
+          "acc": 0.25,
+          "chance": 0.333,
+          "n": 4
+        }
+      }
+    }
+  ],
+  "head_params": 3949060
+}

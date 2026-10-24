@@ -1,0 +1,8 @@
+name = "doubt"
+main = "src/worker.mjs"
+compatibility_date = "2026-10-01"
+workers_dev = true
+
+[ai]
+binding = "AI"
+# Secret: wrangler secret put DOUBT_KEY

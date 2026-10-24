@@ -1,0 +1,123 @@
+{
+  "backbone": "Qwen/Qwen3-0.6B",
+  "n_train": 300,
+  "n_eval": 80,
+  "epochs": 10,
+  "before": [
+    {
+      "set": "seen",
+      "acc": 0.427,
+      "chance": 0.334,
+      "brier": 0.664,
+      "families": {
+        "outage": {
+          "acc": 0.447,
+          "chance": 0.5,
+          "n": 47
+        },
+        "refund": {
+          "acc": 0.31,
+          "chance": 0.5,
+          "n": 42
+        },
+        "team": {
+          "acc": 0.38,
+          "chance": 0.2,
+          "n": 50
+        },
+        "tier": {
+          "acc": 0.673,
+          "chance": 0.25,
+          "n": 55
+        },
+        "urgency": {
+          "acc": 0.25,
+          "chance": 0.25,
+          "n": 40
+        }
+      }
+    },
+    {
+      "set": "heldout",
+      "acc": 0.348,
+      "chance": 0.438,
+      "brier": 0.565,
+      "families": {
+        "big_amount": {
+          "acc": 0.354,
+          "chance": 0.5,
+          "n": 48
+        },
+        "error_code": {
+          "acc": 0.388,
+          "chance": 0.5,
+          "n": 49
+        },
+        "tone": {
+          "acc": 0.31,
+          "chance": 0.333,
+          "n": 58
+        }
+      }
+    }
+  ],
+  "after": [
+    {
+      "set": "seen",
+      "acc": 0.761,
+      "chance": 0.334,
+      "brier": 0.34,
+      "families": {
+        "outage": {
+          "acc": 0.723,
+          "chance": 0.5,
+          "n": 47
+        },
+        "refund": {
+          "acc": 0.667,
+          "chance": 0.5,
+          "n": 42
+        },
+        "team": {
+          "acc": 0.82,
+          "chance": 0.2,
+          "n": 50
+        },
+        "tier": {
+          "acc": 1.0,
+          "chance": 0.25,
+          "n": 55
+        },
+        "urgency": {
+          "acc": 0.5,
+          "chance": 0.25,
+          "n": 40
+        }
+      }
+    },
+    {
+      "set": "heldout",
+      "acc": 0.548,
+      "chance": 0.438,
+      "brier": 0.495,
+      "families": {
+        "big_amount": {
+          "acc": 0.417,
+          "chance": 0.5,
+          "n": 48
+        },
+        "error_code": {
+          "acc": 0.796,
+          "chance": 0.5,
+          "n": 49
+        },
+        "tone": {
+          "acc": 0.448,
+          "chance": 0.333,
+          "n": 58
+        }
+      }
+    }
+  ],
+  "head_params": 3949060
+}

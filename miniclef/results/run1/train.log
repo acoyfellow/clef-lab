@@ -1,0 +1,33 @@
+cache train 0/300 3s
+cache train 25/300 74s
+cache train 50/300 135s
+cache train 75/300 202s
+cache train 100/300 268s
+cache train 125/300 334s
+cache train 150/300 399s
+cache train 175/300 459s
+cache train 200/300 531s
+cache train 225/300 596s
+cache train 250/300 650s
+cache train 275/300 706s
+cache seen 0/80 3s
+cache seen 25/80 62s
+cache seen 50/80 115s
+cache seen 75/80 179s
+cache heldout 0/80 2s
+cache heldout 25/80 40s
+cache heldout 50/80 80s
+cache heldout 75/80 117s
+UNTRAINED [{"set": "seen", "acc": 0.427, "chance": 0.334, "brier": 0.664, "families": {"outage": {"acc": 0.447, "chance": 0.5, "n": 47}, "refund": {"acc": 0.31, "chance": 0.5, "n": 42}, "team": {"acc": 0.38, "chance": 0.2, "n": 50}, "tier": {"acc": 0.673, "chance": 0.25, "n": 55}, "urgency": {"acc": 0.25, "chance": 0.25, "n": 40}}}, {"set": "heldout", "acc": 0.348, "chance": 0.438, "brier": 0.565, "families": {"big_amount": {"acc": 0.354, "chance": 0.5, "n": 48}, "error_code": {"acc": 0.388, "chance": 0.5, "n": 49}, "tone": {"acc": 0.31, "chance": 0.333, "n": 58}}}]
+epoch 1/10 loss 4.3364 18s | seen 0.624 | heldout 0.665
+epoch 2/10 loss 3.5899 23s | seen 0.697 | heldout 0.606
+epoch 3/10 loss 3.2903 17s | seen 0.735 | heldout 0.6
+epoch 4/10 loss 3.1331 21s | seen 0.756 | heldout 0.665
+epoch 5/10 loss 3.0721 17s | seen 0.748 | heldout 0.677
+epoch 6/10 loss 2.8655 20s | seen 0.756 | heldout 0.684
+epoch 7/10 loss 2.9221 17s | seen 0.786 | heldout 0.684
+epoch 8/10 loss 2.7596 19s | seen 0.803 | heldout 0.6
+epoch 9/10 loss 2.6594 19s | seen 0.774 | heldout 0.587
+epoch 10/10 loss 2.6547 17s | seen 0.761 | heldout 0.548
+TRAINED [{"set": "seen", "acc": 0.761, "chance": 0.334, "brier": 0.34, "families": {"outage": {"acc": 0.723, "chance": 0.5, "n": 47}, "refund": {"acc": 0.667, "chance": 0.5, "n": 42}, "team": {"acc": 0.82, "chance": 0.2, "n": 50}, "tier": {"acc": 1.0, "chance": 0.25, "n": 55}, "urgency": {"acc": 0.5, "chance": 0.25, "n": 40}}}, {"set": "heldout", "acc": 0.548, "chance": 0.438, "brier": 0.495, "families": {"big_amount": {"acc": 0.417, "chance": 0.5, "n": 48}, "error_code": {"acc": 0.796, "chance": 0.5, "n": 49}, "tone": {"acc": 0.448, "chance": 0.333, "n": 58}}}]
+DONE head params 3,949,060

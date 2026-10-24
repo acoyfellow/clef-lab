@@ -1,0 +1,7 @@
+# Pin exact versions. `run` + uv avoids Cog 0.17 "externally-managed-environment".
+build:
+  gpu: true
+  python_version: "3.12"
+  run:
+    - "uv pip install --system --break-system-packages torch==2.14.1 transformers==5.20.2 safetensors huggingface_hub"
+predict: "predict.py:Predictor"
