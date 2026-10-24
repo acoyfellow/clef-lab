@@ -1,6 +1,6 @@
 # Cog predictor for a Clef-shaped decision model on Workers AI.
 # Weights load in setup(), inference under torch.no_grad(), an input_tokens metric is recorded for billing.
-# UNTESTED here: this workspace has no Docker or GPU.
+# Untested: not yet built with Docker or run on a GPU.
 import json, os, sys
 import torch
 from cog import BasePredictor, Input

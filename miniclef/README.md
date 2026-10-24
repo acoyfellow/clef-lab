@@ -56,4 +56,4 @@ On a Mac, switch the device to `mps` for a large speedup (not done here).
 1. Run on a GPU or Apple Silicon: 5k+ records, early stopping on a separate dev set, a true test set.
 2. Add LoRA on the backbone (peft), as Clef does.
 3. Step up to Qwen3-1.7B / 4B; compare against real Clef-flash on the same held-out set.
-4. `cog/` is an untested Cog wrapper for the Workers AI path (no Docker/GPU in the sandbox).
+4. `cog/` is an untested Cog wrapper for the Workers AI path (not yet run in Docker or on a GPU).
