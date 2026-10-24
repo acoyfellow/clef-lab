@@ -169,6 +169,10 @@ CF_ACCOUNT_ID=... CF_API_TOKEN=... node eval.mjs  # real Clef calls
 - **New kinds of decision models:** [`notes/s1-model-types.md`](notes/s1-model-types.md) lists output types nobody
   covers well yet (ranking, picking a line in the input, what changed between two states, calibrated numbers) and
   where Clef's own scores show gaps.
+- **What runs before the model:** [`notes/s0-and-below.md`](notes/s0-and-below.md) covers "S0": cheap on-device
+  sensing (face, hand and pose tracking in the browser, audio levels, change detection) that decides when to call a
+  decision model and what to send it, with examples from [Glance](https://github.com/acoyfellow/glance) and
+  [read-the-room](https://github.com/acoyfellow/read-the-room).
 - **Side note:** [`notes/handwired-in-workers.md`](notes/handwired-in-workers.md) covers running
   [Handwired](https://github.com/chenglou/handwired) programs inside a Cloudflare Worker.
 
@@ -188,6 +192,7 @@ doubt/
 notes/
   clef-recipe.md          how Clef is built, trained and served
   s1-model-types.md       ideas for new decision models
+  s0-and-below.md         on-device sensing before S1 and LLMs
   handwired-in-workers.md
 ```
 
@@ -197,3 +202,5 @@ notes/
   [Hugging Face](https://huggingface.co/Cloudflare/clef). The file is included here unchanged.
 - The mini-Clef backbone is [Qwen3-0.6B](https://huggingface.co/Qwen/Qwen3-0.6B) (Apache-2.0).
 - The question format follows the Jev / SystemOne decision-model API that Clef is compatible with.
+
+This repo is licensed under Apache-2.0. See [`LICENSE`](LICENSE).
