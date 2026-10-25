@@ -1,0 +1,31 @@
+.gitignore
+  s_5ddfc8f4108175::t_8ff43367fb205f 7
+dew/out-laya-full.log
+  s_5ddfc8f4108175::t_e2462ca37783ed 1-28
+dew/out-laya-full/log.txt
+  s_5ddfc8f4108175::t_e7c4054d9f2d0a 1-4
+dew/out-laya-full/receipt.json
+  s_5ddfc8f4108175::t_50f7f03351aba9 1-27
+dew/out-laya-head.log
+  s_5ddfc8f4108175::t_447090e7002e1d 1-28
+dew/out-laya-head/log.txt
+  s_5ddfc8f4108175::t_6faa23ada47543 1-4
+dew/out-laya-head/receipt.json
+  s_5ddfc8f4108175::t_1f4608fc24fa41 1-27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "b0edcc70b09082bd7d968ac781244889b4d27e41",
+  "prompts": {},
+  "sessions": {
+    "s_5ddfc8f4108175": {
+      "agent_id": {
+        "tool": "pi",
+        "id": "01a0fc06-d951-77a8-8358-cd5dae6891bd",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Jordan Coeyman <jcoeyman@cloudflare.com>"
+    }
+  }
+}
