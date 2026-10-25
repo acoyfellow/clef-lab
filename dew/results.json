@@ -1,0 +1,70 @@
+{
+  "eval_sets": "same as miniclef: seen families (seed 2, 80 records), held-out families (seed 3, 80 records)",
+  "hardware": "4-vCPU container, CPU only",
+  "dew_commit": "36d8f2a",
+  "runs": [
+    {
+      "name": "laya-zero-shot",
+      "model": "convaiinnovations/laya (ModernBERT-large + decision head)",
+      "training": "none",
+      "seen": {
+        "acc": 0.786,
+        "chance": 0.334,
+        "families": {
+          "outage": 0.766,
+          "refund": 0.714,
+          "team": 0.94,
+          "tier": 0.982,
+          "urgency": 0.425
+        }
+      },
+      "heldout": {
+        "acc": 0.845,
+        "chance": 0.438,
+        "families": {
+          "big_amount": 1.0,
+          "error_code": 0.98,
+          "tone": 0.603
+        }
+      }
+    },
+    {
+      "name": "qwen-lora-dew",
+      "model": "Qwen/Qwen3-0.6B + LoRA r16 (q_proj, v_proj) + fresh DecisionHead",
+      "training": "dew DecisionObjective, LogLoss + 0.5 Brier, lr 1e-4, 30 steps x batch 4 (120 question rows), StateFirstLayout(max_len=192), 7.7 min",
+      "seen": {
+        "acc": 0.637,
+        "chance": 0.334,
+        "families": {
+          "outage": 0.723,
+          "refund": 0.69,
+          "team": 0.7,
+          "tier": 0.782,
+          "urgency": 0.2
+        }
+      },
+      "heldout": {
+        "acc": 0.632,
+        "chance": 0.438,
+        "families": {
+          "big_amount": 0.875,
+          "error_code": 0.592,
+          "tone": 0.466
+        }
+      }
+    },
+    {
+      "name": "miniclef (for comparison, ../miniclef)",
+      "model": "Qwen/Qwen3-0.6B frozen + Clef JointSchemaHead width 256",
+      "training": "hand-written PyTorch loop, 300 records x 10 epochs",
+      "seen": {
+        "acc": 0.761,
+        "chance": 0.334
+      },
+      "heldout": {
+        "acc": 0.548,
+        "chance": 0.438
+      }
+    }
+  ]
+}
