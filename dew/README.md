@@ -42,6 +42,29 @@ MODE=qwen python dew_run.py      # ~8 min train + ~5 min eval, ~8 GB RAM
 Batch 8 at 256 tokens ran a 12 GB machine out of memory. On a GPU, use more data and steps, a separate dev set,
 and `decide.calibrated(...)`.
 
+## Fine-tuning Laya on a 12 GB CPU machine
+
+Laya is the strongest model here, so the next step is fine-tuning it. What fits in 12 GB of RAM:
+
+| Setup | Trainable | Peak memory | Result |
+|---|---|---|---|
+| full fine-tune, float32 | 421M | > 12.3 GB | killed (out of memory) |
+| full fine-tune, `dtype="bfloat16"`, batch 1 | 421M | ~12.3 GB | thrashes; parameters stay float32, only compute is bf16 |
+| head + every norm layer | 26.3M | > 12 GB | killed: norms sit in every block, so backprop still runs through the whole backbone |
+| **head + final norm only** | **26.2M** | **6.7 GB** | **fits**: ~22 s/step at batch 4; train loss 0.87 -> 0.43 by step 40 (no eval yet) |
+
+```python
+from dew.objectives.base import freeze
+head_and_final_norm = lambda path: len(path) > 2 and (
+    path[1] == "head" or (path[1] == "backbone" and path[2] == "norm"))
+objective = DecisionObjective(laya, loss=LogLoss() + 0.5 * Brier(),
+                              variables=freeze(laya.variables, head_and_final_norm))
+```
+
+**Gotcha:** freezing the *entire* backbone (`path[1] == "head"` only) fails with `KeyError: 'params'` in
+`thaw()`, called from `DecisionModel._read`: the backbone subtree then has a `frozen` collection but no `params`.
+Keeping any one backbone leaf trainable (here the final norm) avoids it.
+
 ## Next
 
 - Fine-tune Laya itself on the tickets (start from the strongest model, not a fresh head).
