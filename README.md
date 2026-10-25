@@ -114,6 +114,20 @@ What we learned:
 
 Per-question breakdown and how to reproduce: [`miniclef/README.md`](miniclef/README.md).
 
+## Same data, a real framework: Dew
+
+[`dew/`](dew/) runs the same tickets and the same eval sets through [Dew](https://dewml.dev), a JAX training
+framework with a decision-model module.
+
+| Model | Training | Seen question types | Never-seen question types |
+|---|---|---|---|
+| Laya (a released decision model), zero-shot | none | **79%** | **85%** |
+| Qwen3-0.6B + LoRA, trained with Dew | 8 minutes on CPU | 64% | 63% |
+| mini-Clef (above) | 300 records x 10 epochs | 76% | 55% |
+
+The lesson: a decision model pretrained on many tasks generalizes to new questions far better than anything a few
+hundred synthetic examples can teach. Start from one, then fine-tune. Details: [`dew/README.md`](dew/README.md).
+
 ## A practical example: doubt
 
 [`doubt/`](doubt/) shows a decision model doing a job that pattern matching does badly.
@@ -185,6 +199,9 @@ miniclef/
   joint_schema_model.py   Clef's model code, unchanged (Apache-2.0)
   cog/                    Cog packaging sketch (untested)
   results/run1/           receipt.json, train.log, trained head + config
+dew/
+  dew_run.py              Laya zero-shot, Qwen + LoRA through Dew
+  results.json            per-question-type results
 doubt/
   src/                    Worker + review logic
   corpus/cases.mjs        16 planted server examples
