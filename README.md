@@ -176,6 +176,9 @@ CF_ACCOUNT_ID=... CF_API_TOKEN=... node eval.mjs  # real Clef calls
 
 ## Where to go next
 
+- **The big picture:** [`notes/systems-of-models.md`](notes/systems-of-models.md) is a field guide to systems of
+  models: where "System 1" and "compound AI" come from, who is building decision models, routers and training tools,
+  patterns that work, what independent tests found, and where it's heading.
 - **Bigger and better mini-Clef:** more data, a separate test set, early stopping, LoRA on the backbone, a 1.7B or
   4B backbone, and a side-by-side against real Clef-flash.
 - **Ship your own:** [`miniclef/cog/`](miniclef/cog/) is a starting point for packaging a model with
@@ -210,8 +213,7 @@ notes/
   clef-recipe.md          how Clef is built, trained and served
   s1-model-types.md       ideas for new decision models
   s0-and-below.md         on-device sensing before S1 and LLMs
-dew/                      same data through the Dew framework (Laya zero-shot, Qwen + LoRA)
-dew/                      same data through the Dew framework (Laya zero-shot, Qwen + LoRA)
+  systems-of-models.md    field guide: history, landscape, patterns, trajectory
   handwired-in-workers.md
 ```
 
