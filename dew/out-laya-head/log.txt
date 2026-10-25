@@ -1,0 +1,4 @@
+TRAIN_SECONDS 600
+EVAL {"set": "seen", "acc": 0.825, "families": {"outage": 0.83, "refund": 0.857, "team": 0.94, "tier": 0.982, "urgency": 0.425}}
+EVAL {"set": "heldout", "acc": 0.839, "families": {"big_amount": 0.979, "error_code": 1.0, "tone": 0.586}}
+DONE
