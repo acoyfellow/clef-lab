@@ -176,6 +176,8 @@ CF_ACCOUNT_ID=... CF_API_TOKEN=... node eval.mjs  # real Clef calls
 
 ## Where to go next
 
+- **Findings and predictions:** [`notes/findings.md`](notes/findings.md) sums up what the experiments showed (a
+  general decision model beat everything we trained), gaps in the ecosystem, and where systems of models are heading.
 - **The big picture:** [`notes/systems-of-models.md`](notes/systems-of-models.md) is a field guide to systems of
   models: where "System 1" and "compound AI" come from, who is building decision models, routers and training tools,
   patterns that work, what independent tests found, and where it's heading.
@@ -214,6 +216,7 @@ notes/
   s1-model-types.md       ideas for new decision models
   s0-and-below.md         on-device sensing before S1 and LLMs
   systems-of-models.md    field guide: history, landscape, patterns, trajectory
+  findings.md             what we measured, open gaps, predictions
   handwired-in-workers.md
 ```
 

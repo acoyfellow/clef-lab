@@ -176,6 +176,8 @@ multi-label (SATA), relations (ACOS), tracking state across turns (SGD) and hard
 5. **When it's worth it, train a small one:** [`miniclef/`](../miniclef/) shows the recipe on a laptop; Dew does it
    properly on GPUs or TPUs.
 
+For what this repo's own experiments found, open gaps and predictions, see [`findings.md`](findings.md).
+
 ## Reading list
 
 - Kahneman, *Thinking, Fast and Slow* (2011)
