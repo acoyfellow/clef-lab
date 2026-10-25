@@ -194,6 +194,7 @@ notes/
   s1-model-types.md       ideas for new decision models
   s0-and-below.md         on-device sensing before S1 and LLMs
 dew/                      same data through the Dew framework (Laya zero-shot, Qwen + LoRA)
+dew/                      same data through the Dew framework (Laya zero-shot, Qwen + LoRA)
   handwired-in-workers.md
 ```
 
